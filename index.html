@@ -1,1 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Logan Arrizabalaga — Editing, Socials, Design</title>
+  <meta name="description" content="Portfolio — editing, social media, and design work by Logan Arrizabalaga." />
+  <link rel="preload" href="assets/hero.jpg" as="image">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.ico">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Logan Arrizabalaga — Editing, Socials, Design" />
+  <meta property="og:description" content="Editing, social media, and design work." />
+  <meta property="og:image" content="assets/hero.jpg" />
+  <meta property="og:type" content="website" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#top">LOGAN ARRIZABALAGA — EDITING, SOCIALS, DESIGN</a>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#availability">Availability</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
+  <main id="top">
+    <section class="hero">
+      <img src="assets/hero.jpg" alt="Notebook, tablet, and coffee on a desk" />
+      <div class="overlay">
+        <h1>About Me</h1>
+      </div>
+    </section>
+
+    <section id="about" class="section wrap">
+      <div class="two-col">
+        <div>
+          <h2>Hi, I’m Logan.</h2>
+          <p>
+            I’m a social/content creative focused on entertainment & gaming.
+            I’ve led social programs, edited trailers & verticals, and shipped
+            design work for campaigns. I care about tight storytelling and
+            clean execution under deadline.
+          </p>
+          <p class="muted">
+            (This paragraph is a placeholder—swap in your real “about” copy.)
+          </p>
+        </div>
+        <aside class="card">
+          <h3>Follow Me</h3>
+          <ul class="links">
+            <li><a target="_blank" rel="noopener" href="https://twitter.com/">Twitter / X</a></li>
+            <li><a target="_blank" rel="noopener" href="https://instagram.com/">Instagram</a></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="work" class="section wrap">
+      <h2>Selected Work</h2>
+      <div class="grid">
+        <!-- Duplicate .project-card blocks for each item; replace links from your Google Doc -->
+        <article class="project-card">
+          <a class="thumb" href="https://example.com" target="_blank" rel="noopener" aria-label="Open project">
+            <img src="assets/hero.jpg" alt="Project cover (replace)" />
+          </a>
+          <div class="meta">
+            <h3><a href="https://example.com" target="_blank" rel="noopener">BLEACH: TYBW — Social Launch</a></h3>
+            <p class="role">Role: Social Media Manager, Editor</p>
+            <p class="desc">Teasers, launch beats, creator kits, and recap sizzles across platforms.</p>
+            <div class="tags">
+              <span>Strategy</span><span>Editing</span><span>Design</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <a class="thumb" href="https://example.com" target="_blank" rel="noopener">
+            <img src="assets/hero.jpg" alt="Project cover (replace)" />
+          </a>
+          <div class="meta">
+            <h3><a href="https://example.com" target="_blank" rel="noopener">Creator Collab Reel (TikTok/IG)</a></h3>
+            <p class="role">Role: Editor</p>
+            <p class="desc">Vertical-first editing, tempo mapping, and motion graphics polish.</p>
+            <div class="tags">
+              <span>Vertical</span><span>Motion</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Add more items here -->
+      </div>
+    </section>
+
+    <section id="availability" class="section wrap">
+      <h2>Availability</h2>
+      <div class="three-col">
+        <div class="card">
+          <h3>Editing / Design</h3>
+          <ul class="schedule">
+            <li><b>Mon–Thu:</b> 4–8 PM PST</li>
+            <li><b>Fri:</b> All day</li>
+            <li><b>Sat–Sun:</b> Flexible</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Social Media</h3>
+          <ul class="schedule">
+            <li><b>Mon–Thu:</b> 10:30 AM–8 PM PST</li>
+            <li><b>Fri:</b> All day</li>
+            <li><b>Sat–Sun:</b> Flexible</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Quick Links</h3>
+          <ul class="links">
+            <li><a target="_blank" rel="noopener" href="https://docs.google.com/document/d/1BBI7YoRpgEUqo1XzzHFOEjvfGALQaj_VIiVQXq2qJqI/edit">Full Work Index (Google Doc)</a></li>
+            <li><a target="_blank" rel="noopener" href="#">Resume (PDF)</a></li>
+            <li><a target="_blank" rel="noopener" href="#">Reel</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section wrap">
+      <h2>Contact</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>Business</h3>
+          <p><a href="mailto:loganarrizzz@gmail.com">loganarrizzz@gmail.com</a></p>
+        </div>
+        <div class="card">
+          <h3>Academic</h3>
+          <p><a href="mailto:loganarrizza.college@gmail.com">loganarrizza.college@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <small>© <span id="y"></span> Logan Arrizabalaga</small>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
