@@ -1,95 +1,100 @@
-/* Custom Studio Aesthetic */
 :root {
   --bg: #000000;
   --ink: #ffffff;
   --muted: #888888;
   --border: 1px solid rgba(255, 255, 255, 0.15);
   --max: 1200px;
+  --spring: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: "Inter", system-ui, sans-serif;
-  letter-spacing: -0.02em; /* Premium tight spacing */
+html, body { 
+  background: var(--bg); 
+  color: var(--ink); 
+  margin: 0; 
+  font-family: "Inter", sans-serif; 
   -webkit-font-smoothing: antialiased;
 }
 
-.wrap {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 40px;
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+
+/* REVEAL ANIMATIONS (Framer Style) */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s var(--spring);
+  clip-path: inset(0 0 100% 0);
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  clip-path: inset(0 0 0% 0);
 }
 
-/* Seamless Header & Lines */
+/* HEADER - CLEAN & BLURRED */
 .site-header {
   border-bottom: var(--border);
-  padding: 20px 0;
+  padding: 24px 0;
   background: rgba(0,0,0,0.8);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   z-index: 100;
 }
+.site-header .wrap { display: flex; justify-content: space-between; align-items: center; }
+.brand { font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none; color: #fff; font-size: 14px; }
+.nav a { margin-left: 24px; color: var(--muted); text-transform: uppercase; font-size: 12px; font-weight: 700; text-decoration: none; position: relative; }
+.nav a:hover { color: #fff; }
 
-.site-header .wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* HERO - THE STATEMENT */
+.hero { padding: 120px 0 80px 0; border-bottom: var(--border); }
+h1 {
+  font-size: clamp(40px, 8vw, 84px);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  margin: 0;
 }
 
-.brand { 
-  font-weight: 800; 
-  text-transform: uppercase; 
-  text-decoration: none; 
-  color: #fff;
-}
-
-/* The Roles Bar (Seamless & Technical) */
+/* SEAMLESS ROLES BAR */
 .roles-bar {
   width: 100%;
-  border-top: var(--border);
   border-bottom: var(--border);
-  padding: 15px 0;
-  display: flex;
-  justify-content: space-around;
-  font-family: monospace; /* Subtle CS flex */
-  font-size: 11px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.role-item {
+  padding: 24px;
+  text-align: center;
+  font-family: monospace; /* Technical Flex */
+  font-size: 10px;
   text-transform: uppercase;
   color: var(--muted);
-  margin: 40px 0;
+  border-right: var(--border);
+}
+.role-item:last-child { border-right: none; }
+
+/* PROJECT GRID - SHARP & EDITORIAL */
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); border-left: var(--border); }
+.project-card { 
+  border-right: var(--border); 
+  border-bottom: var(--border); 
+  padding: 40px;
+  transition: background 0.4s ease;
+}
+.project-card:hover { background: #080808; }
+.project-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; filter: grayscale(100%); transition: 0.5s var(--spring); }
+.project-card:hover img { filter: grayscale(0%); transform: scale(1.02); }
+
+/* CUSTOM CURSOR */
+#cursor {
+  width: 20px; height: 20px; border: 1px solid #fff; border-radius: 50%;
+  position: fixed; pointer-events: none; z-index: 9999;
+  mix-blend-mode: difference; transition: transform 0.2s;
 }
 
-/* Hero & Video */
-.hero {
-  padding: 80px 0;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 40px;
-  align-items: center;
-}
-
-h1 {
-  font-size: clamp(32px, 5vw, 56px);
-  font-weight: 800;
-  line-height: 1.05;
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: -0.04em;
-}
-
-.video-container {
-  aspect-ratio: 16/9;
-  background: #111;
-  border: var(--border);
-  overflow: hidden;
-}
-
-.video-container video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+@media (max-width: 900px) {
+  .roles-bar { grid-template-columns: 1fr 1fr; }
+  .grid { grid-template-columns: 1fr; }
 }

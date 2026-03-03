@@ -18,28 +18,29 @@
 <body>
   <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="#top">LOGAN — 映像 (IMAGE)</a> 
+    <a class="brand" href="#top">LOGAN — 映像 (IMAGE)</a>
     <nav class="nav">
       <a href="#work">Work</a>
+      <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
 <main id="top">
-  <section class="hero animate" style="animation-delay: 0.2s;">
+  <section class="hero">
     <div class="wrap">
-      <div class="hero-content">
-        <h1>I'm one of the very few people who won't make your fanbase cringe from cultural illiteracy.</h1>
-        
-        <div class="video-preview">
-           <video autoplay muted loop playsinline class="nifty-video">
-             <source src="assets/bleach_trailer.mp4" type="video/mp4">
-           </video>
-        </div>
-      </div>
+      <h1>I won't make your fanbase cringe from cultural illiteracy.</h1>
     </div>
   </section>
+
+  <div class="roles-bar">
+    <div class="role-item">Creative Strategist</div>
+    <div class="role-item">Social Analyst</div>
+    <div class="role-item">Marketing Operations</div>
+    <div class="role-item">Community Architect</div>
+  </div>
+</main>
 
   <div class="roles-bar animate" style="animation-delay: 0.5s;">
     <span>Creative Strategist</span>
@@ -160,5 +161,26 @@
     </div>
   </footer>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <div id="cursor"></div> <script>
+  // SCROLL REVEAL ENGINE
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('active');
+    });
+  }, { threshold: 0.1 });
+
+  // This finds your text and cards and makes them 'pop'
+  document.querySelectorAll('h1, .role-item, .project-card').forEach(el => {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+
+  // CUSTOM CURSOR LOGIC
+  const cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+</script>
 </body>
 </html>
