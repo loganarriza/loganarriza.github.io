@@ -161,21 +161,81 @@
     </div>
   </footer>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-  <div id="cursor"></div> <script>
-  // SCROLL REVEAL ENGINE
+  <div id="cursor"></div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#">LOGAN — 映像 (IMAGE)</a>
+    <nav class="nav">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="hero-grid">
+      <div class="reveal">
+        <h1>I won't make your fanbase cringe from cultural illiteracy.</h1>
+        <p class="muted" style="margin-top: 20px;">Community-first digital strategist specializing in authentic fan engagement for anime and gaming[cite: 9, 12].</p>
+      </div>
+      <div class="video-box reveal" style="transition-delay: 0.2s;">
+        <video autoplay muted loop playsinline>
+          <source src="assets/bleach_trailer.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+  </div>
+
+  <div class="roles-bar reveal">
+    <div class="role-item">Creative Strategist</div>
+    <div class="role-item">Social Analyst</div>
+    <div class="role-item">Marketing Operations</div>
+    <div class="role-item">Community Architect</div>
+  </div>
+
+  <section class="case-study reveal">
+    <div class="wrap">
+      <span class="muted" style="text-transform: uppercase; font-size: 10px;">Case Study 01 / VIZ Media</span>
+      <h2 style="font-size: 40px; font-weight: 900; margin: 10px 0;">JUNJI ITO ACTIVATION</h2>
+      <p>Leveraging the juxtaposition of Ito's personable nature with his body horror manga to create a repeatable content engine[cite: 24].</p>
+      
+      <div class="metric-grid">
+        <div class="metric-card"><span>4.5M+</span><label>Impressions</label></div>
+        <div class="metric-card"><span>749K+</span><label>Engagements</label></div>
+        <div class="metric-card"><span>52K+</span><label>Saves</label></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-study reveal">
+    <div class="wrap">
+      <span class="muted" style="text-transform: uppercase; font-size: 10px;">Case Study 02 / Esports</span>
+      <h2 style="font-size: 40px; font-weight: 900; margin: 10px 0;">NYXL (OVERWATCH LEAGUE)</h2>
+      <p>Community-forward content blending identity and timely platform moments to keep the fanbase fed[cite: 41, 46].</p>
+      
+      <div class="metric-grid">
+        <div class="metric-card"><span>73K+</span><label>Likes on Main Reel</label></div>
+        <div class="metric-card"><span>Viral</span><label>Community Hooks</label></div>
+        <div class="metric-card"><span>Identity</span><label>Driven Content</label></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+  // SCROLL REVEAL
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) entry.target.classList.add('active');
     });
   }, { threshold: 0.1 });
 
-  // This finds your text and cards and makes them 'pop'
-  document.querySelectorAll('h1, .role-item, .project-card').forEach(el => {
-    el.classList.add('reveal');
-    observer.observe(el);
-  });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // CUSTOM CURSOR LOGIC
+  // CURSOR
   const cursor = document.getElementById('cursor');
   document.addEventListener('mousemove', e => {
     cursor.style.left = e.clientX + 'px';
