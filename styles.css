@@ -129,17 +129,14 @@ p { font-size: 16px; line-height: 1.6; color: var(--muted); }
 .mega-footer a { display: inline-block; margin: 0 15px; font-family: "JetBrains Mono", monospace; color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.3s; text-transform: uppercase; }
 .mega-footer a:hover { color: #fff; }
 
-/* --- REVEAL ANIMATION (FIXED) --- */
+/* --- REVEAL ANIMATION (NUCLEAR FIX) --- */
+/* This forces all content to be visible immediately, bypassing the broken Javascript */
 .reveal { 
-  opacity: 1; 
-  transform: translateY(40px); 
-  transition: all 1s var(--spring); 
-  /* Removed clip-path so the browser doesn't get confused about element height */
+  opacity: 1 !important; 
+  transform: none !important; 
+  clip-path: none !important;
 }
-.reveal.active { 
-  opacity: 1; 
-  transform: translateY(0); 
-}
+
 @media (max-width: 900px) {
   .col, .table-col { flex: 0 0 100%; border-right: none; border-bottom: var(--border); }
   .table-col { padding: 30px 20px; }
