@@ -169,7 +169,6 @@ p { font-size: 16px; line-height: 1.6; color: var(--muted); }
   align-items: center; 
   position: sticky; 
   top: 0; 
-  background: #ffffff; /* Pure white */
   background-image: url('assets/TopBar.png'); /* Optional texture */
   background-size: cover;
   z-index: 100; 
