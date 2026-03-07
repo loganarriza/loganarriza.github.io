@@ -486,3 +486,57 @@ p {
 .bento-list strong a:hover {
   color: var(--muted);
 }
+
+/* --- RESUME & EXPERIENCE SECTION --- */
+.resume-row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px;
+  border-bottom: var(--border);
+  transition: background 0.3s var(--spring), padding-left 0.3s var(--spring);
+  /* Prepping for when you add the dedicated pages later */
+  cursor: pointer;
+}
+
+.resume-row:hover {
+  background: #080808;
+  padding-left: 50px;
+  /* Slight indent on hover to feel interactive */
+}
+
+.resume-meta {
+  flex: 0 0 25%;
+  /* Takes up the left 1/4 of the row */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.resume-meta strong {
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.resume-content {
+  flex: 1;
+  /* Takes up the remaining space */
+}
+
+.resume-content h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+/* Mobile Responsiveness for Resume */
+@media (max-width: 768px) {
+  .resume-meta {
+    flex: 0 0 100%;
+    margin-bottom: 20px;
+  }
+}
