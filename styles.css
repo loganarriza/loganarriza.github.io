@@ -226,7 +226,7 @@ p {
 
 /* --- ASSIGNING THE SPECIFIC IMAGES --- */
 .row-jojo::before {
-  background-image: url('assets/legorocklee.jpg');
+  background-image: url('assets/jojobg.png');
 }
 
 .row-bleach::before {
@@ -397,16 +397,13 @@ p {
   margin-bottom: 20px;
 }
 
+/* --- THE ITO GALLERY FIX --- */
 .ito-gallery img {
   width: 100%;
-  aspect-ratio: 16/9;
-  object-fit: contain;
-  /* FIX: Shows the whole image without cropping */
-  background: #050505;
-  /* Adds a dark box behind it in case of weird ratios */
+  aspect-ratio: 9/16; /* Flipped to perfectly match vertical TikTok/Reel resolution */
+  object-fit: cover; /* Fills the new tall box beautifully */
   border: var(--border);
-  filter: grayscale(60%) brightness(0.7);
-  /* Matches the new cinematic vibe */
+  filter: grayscale(60%) brightness(0.7); 
   transition: all 0.3s var(--spring);
   cursor: pointer;
 }
