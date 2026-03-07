@@ -209,12 +209,12 @@ p {
   /* Sits between the black background and the text */
   transition: opacity 0.5s ease-out;
   /* IMPORTANT: Makes the images moody so white text pops */
-  filter: grayscale(100%) brightness(0.4) contrast(1.2);
+  filter: grayscale(50%) brightness(0.5) contrast(1.2);
 }
 
 /* HOVER STATE: Reveal the image layer subtly */
 .table-row:hover::before {
-  opacity: 0.4;
+  opacity: 0.6;
   /* Adjust this between 0.2 and 0.5 depending on image brightness */
 }
 
@@ -230,15 +230,15 @@ p {
 }
 
 .row-bleach::before {
-  background-image: url('assets/legorocklee.jpg');
+  background-image: url('assets/bleachbg.png');
 }
 
 .row-zom::before {
-  background-image: url('assets/legorocklee.jpg');
+  background-image: url('assets/zombg.png');
 }
 
 .row-goh::before {
-  background-image: url('assets/legorocklee.jpg');
+  background-image: url('assets/gohbg.png');
 }
 
 /* Typography remains the same */
