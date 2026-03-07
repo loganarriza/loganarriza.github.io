@@ -601,3 +601,67 @@ p {
   border-color: #fff;
   transform: translateY(-2px);
 }
+
+/* =========================================
+   MOBILE RESPONSIVE RULES (MAX-WIDTH: 768px)
+   ========================================= */
+@media (max-width: 768px) {
+  
+  /* 1. Stack the layout vertically */
+  .row, .header-row, .table-row, .resume-row {
+    flex-direction: column !important;
+  }
+
+  /* 2. Override the desktop 40/60 splits to take up 100% width */
+  .col, .media-col {
+    flex: 100% !important;
+    padding: 25px !important; /* Shrinks the massive desktop padding */
+  }
+
+  /* 3. Hero Video needs to stay flush to the edges */
+  .media-col {
+    padding: 0 !important; 
+  }
+
+  /* 4. Navigation & Header */
+  .header-row {
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  /* 5. Junji Ito Gallery -> Stacks the 3 thumbnails */
+  .ito-gallery {
+    grid-template-columns: 1fr; 
+  }
+
+  /* 6. Junji Ito Metrics -> Stacks the numbers */
+  .metrics-grid {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* 7. Launch Highlights Table Fix */
+  .table-col {
+    padding: 20px !important;
+    border-right: none !important; /* Removes the vertical dividers */
+    border-bottom: var(--border);  /* Adds horizontal dividers instead */
+  }
+  .table-col:last-child {
+    border-bottom: none;
+  }
+
+  /* 8. Resume Section Fix */
+  .resume-meta {
+    flex: 100%;
+    margin-bottom: 15px;
+  }
+  .resume-row:hover {
+    padding-left: 25px; /* Less intense hover shift on mobile */
+  }
+
+  /* 9. Roles Bar (Creative Strategist, etc) */
+  .roles-bar {
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
