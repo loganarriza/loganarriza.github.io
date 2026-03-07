@@ -468,13 +468,31 @@ p {
   display: contents;
 }
 
+/* --- ESPORTS BENTO THUMBNAILS --- */
+.bento-list li {
+  /* Just ensuring the list items layout properly */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
 .bento-thumb {
   width: 100%;
-  height: 80px;
-  background: #111;
-  border: var(--border);
-  margin-bottom: 10px;
+  aspect-ratio: 16/9;
+  /* This forces a standard, taller video thumbnail shape */
   object-fit: cover;
+  /* Ensures the image fills the new height without warping */
+  border-radius: 4px;
+  /* Adds a clean, slight rounding to the corners */
+  margin-bottom: 12px;
+  filter: grayscale(40%) brightness(0.8);
+  /* Keeps them moody to match the site */
+  transition: filter 0.3s var(--spring), transform 0.3s var(--spring);
+}
+
+/* Lights up on hover so they feel clickable */
+.bento-list li:hover .bento-thumb {
+  filter: grayscale(0%) brightness(1);
 }
 
 .bento-list strong a {
@@ -539,4 +557,47 @@ p {
     flex: 0 0 100%;
     margin-bottom: 20px;
   }
+}
+
+/* --- SKILLS & CAPABILITIES SECTION --- */
+.skills-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 20px;
+}
+
+.skill-header {
+  width: 100%;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  border-bottom: var(--border);
+  padding-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+/* We don't want a massive top margin on the very first header */
+.skills-wrapper .skill-header:first-child {
+  margin-top: 0;
+}
+
+.skill-tag {
+  background: #080808;
+  border: var(--border);
+  color: #fff;
+  padding: 10px 18px;
+  font-size: 14px;
+  border-radius: 4px;
+  /* Keeps the sharp, modern agency feel */
+  transition: border-color 0.3s var(--spring), transform 0.3s var(--spring);
+  cursor: default;
+}
+
+.skill-tag:hover {
+  border-color: #fff;
+  transform: translateY(-2px);
 }
