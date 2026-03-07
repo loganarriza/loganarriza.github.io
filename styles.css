@@ -98,28 +98,34 @@ p {
   font-size: 12px;
 }
 
-/* The Image Fix */
+/* --- HERO MEDIA FIX --- */
 .media-col {
-  padding: 0;
-  flex: 0 0 40%;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
   overflow: hidden;
-  min-height: 400px;
+  /* Keeps the edges perfectly sharp */
 }
 
 .media-col img,
 .media-col video {
   width: 100%;
   height: 100%;
+  aspect-ratio: 16/9;
+  /* Forces the perfect 1920x1080 shape */
   object-fit: cover;
-  filter: grayscale(100%);
+  /* Fills the entire column without black bars */
+  cursor: pointer;
+  filter: grayscale(60%) brightness(0.7);
   transition: filter 0.5s var(--spring), transform 0.5s var(--spring);
 }
 
 .media-col:hover img,
 .media-col:hover video {
-  filter: grayscale(0%);
-  transform: scale(1.05);
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.02);
+  /* Slightly smaller scale so it doesn't clip too hard */
 }
 
 /* Metrics Box */
@@ -400,10 +406,12 @@ p {
 /* --- THE ITO GALLERY FIX --- */
 .ito-gallery img {
   width: 100%;
-  aspect-ratio: 9/16; /* Flipped to perfectly match vertical TikTok/Reel resolution */
-  object-fit: cover; /* Fills the new tall box beautifully */
+  aspect-ratio: 9/16;
+  /* Flipped to perfectly match vertical TikTok/Reel resolution */
+  object-fit: cover;
+  /* Fills the new tall box beautifully */
   border: var(--border);
-  filter: grayscale(60%) brightness(0.7); 
+  filter: grayscale(60%) brightness(0.7);
   transition: all 0.3s var(--spring);
   cursor: pointer;
 }
